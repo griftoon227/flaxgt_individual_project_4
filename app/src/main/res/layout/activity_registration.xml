@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Allows user to scroll through registration activity-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegistrationActivity"
+    android:orientation="vertical"
+    android:background="@color/appBackgroundColor">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--Registration title text-->
+        <TextView
+            android:id="@+id/register_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/register_text"
+            android:textSize="@dimen/title_text_size"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <!--Parent title text-->
+        <TextView
+            android:id="@+id/parent_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/parent_account_text"
+            android:textSize="@dimen/title_text_size"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/register_title_text"
+            android:layout_marginTop="@dimen/register_screen_margin"/>
+
+        <!--Parent first name-->
+        <LinearLayout
+            android:id="@+id/first_name_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/parent_title_text">
+
+            <TextView
+                android:id="@+id/first_name_field_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/first_name_text"
+                android:textSize="@dimen/register_text_size"/>
+
+            <EditText
+                android:id="@+id/first_name_field_entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/first_name_text"
+                android:inputType="text"
+                android:textSize="@dimen/register_text_size" />
+        </LinearLayout>
+
+        <!--Parent last name-->
+        <LinearLayout
+            android:id="@+id/last_name_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/first_name_field">
+
+            <TextView
+                android:id="@+id/last_name_field_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/last_name_text"
+                android:textSize="@dimen/register_text_size"/>
+
+            <EditText
+                android:id="@+id/last_name_field_entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/last_name_text"
+                android:inputType="text"
+                android:textSize="@dimen/register_text_size" />
+        </LinearLayout>
+
+        <!--Parent email-->
+        <LinearLayout
+            android:id="@+id/email_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/last_name_field">
+
+            <TextView
+                android:id="@+id/email_field_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/email_text"
+                android:textSize="@dimen/register_text_size"/>
+
+            <EditText
+                android:id="@+id/email_field_entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/email_text_hint"
+                android:inputType="textEmailAddress"
+                android:textSize="@dimen/register_text_size" />
+        </LinearLayout>
+
+        <!--Parent username-->
+        <LinearLayout
+            android:id="@+id/username_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/email_field">
+
+            <TextView
+                android:id="@+id/username_field_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/username_text"
+                android:textSize="@dimen/register_text_size"/>
+
+            <EditText
+                android:id="@+id/username_field_entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/username_text"
+                android:inputType="text"
+                android:textSize="@dimen/register_text_size" />
+        </LinearLayout>
+
+        <!--Parent password-->
+        <LinearLayout
+            android:id="@+id/password_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/username_field">
+
+            <TextView
+                android:id="@+id/password_field_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/password_text"
+                android:textSize="@dimen/register_text_size"/>
+
+            <EditText
+                android:id="@+id/password_field_entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/password_text"
+                android:inputType="textPassword"
+                android:textSize="@dimen/register_text_size" />
+        </LinearLayout>
+
+        <!--Parent confirm password-->
+        <LinearLayout
+            android:id="@+id/confirm_password_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/password_field">
+
+            <TextView
+                android:id="@+id/confirm_password_field_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/confirm_password_text"
+                android:textSize="@dimen/register_text_size"/>
+
+            <EditText
+                android:id="@+id/confirm_password_field_entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/confirm_password_text"
+                android:inputType="textPassword"
+                android:textSize="@dimen/register_text_size" />
+        </LinearLayout>
+
+        <!--Child title text-->
+        <TextView
+            android:id="@+id/child_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/child_account_text"
+            android:textSize="@dimen/title_text_size"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/confirm_password_field"
+            android:layout_marginTop="@dimen/register_screen_margin"
+            android:layout_marginBottom="@dimen/register_screen_margin"/>
+
+        <!--Child first name-->
+        <LinearLayout
+            android:id="@+id/child_first_name_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/child_title_text">
+
+            <TextView
+                android:id="@+id/child_first_name_field_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/first_name_text"
+                android:textSize="@dimen/register_text_size"/>
+
+            <EditText
+                android:id="@+id/child_first_name_field_entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/first_name_text"
+                android:inputType="text"
+                android:textSize="@dimen/register_text_size" />
+        </LinearLayout>
+
+        <!--Child username-->
+        <LinearLayout
+            android:id="@+id/child_username_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/child_first_name_field">
+
+            <TextView
+                android:id="@+id/child_username_field_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/username_text"
+                android:textSize="@dimen/register_text_size" />
+
+            <EditText
+                android:id="@+id/child_username_field_entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/username_text"
+                android:inputType="text"
+                android:textSize="@dimen/register_text_size" />
+        </LinearLayout>
+
+        <!--Child password-->
+        <LinearLayout
+            android:id="@+id/child_password_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/child_username_field">
+
+            <TextView
+                android:id="@+id/child_password_field_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/password_text"
+                android:textSize="@dimen/register_text_size"/>
+
+            <EditText
+                android:id="@+id/child_password_field_entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/password_text"
+                android:inputType="textPassword"
+                android:textSize="@dimen/register_text_size" />
+        </LinearLayout>
+
+        <!--Child confirm password-->
+        <LinearLayout
+            android:id="@+id/child_confirm_password_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/child_password_field">
+
+            <TextView
+                android:id="@+id/child_confirm_password_field_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/confirm_password_text"
+                android:textSize="@dimen/register_text_size"/>
+
+            <EditText
+                android:id="@+id/child_confirm_password_field_entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/confirm_password_text"
+                android:inputType="textPassword"
+                android:textSize="@dimen/register_text_size" />
+        </LinearLayout>
+
+        <!--Button to submit registration form and validate-->
+        <Button
+            android:id="@+id/submit_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/submit_btn_text"
+            android:textSize="@dimen/title_text_size"
+            app:layout_constraintTop_toBottomOf="@id/child_confirm_password_field" />
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

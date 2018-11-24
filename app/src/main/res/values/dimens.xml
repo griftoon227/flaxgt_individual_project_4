@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="splash_screen_text_margin">10dp</dimen>
+    <dimen name="intro_screen_btn_margin_top_bottom">166dp</dimen>
+    <dimen name="intro_screen_btn_margin_side">25dp</dimen>
+    <dimen name="register_screen_margin">10dp</dimen>
+    <dimen name="login_screen_margin">15dp</dimen>
+    <dimen name="levels_screen_title_margin">35dp</dimen>
+    <dimen name="levels_screen_levels_margin">15dp</dimen>
+    <dimen name="game_character_margin">5dp</dimen>
+    <dimen name="title_text_size">24sp</dimen>
+    <dimen name="intro_screen_btn_text_size">36sp</dimen>
+    <dimen name="register_text_size">16sp</dimen>
+    <dimen name="levels_screen_text_size">20sp</dimen>
+    <dimen name="game_screen_btn_text_size">18sp</dimen>
+    <dimen name="child_stats_chart_info_text_size">20sp</dimen>
+</resources>

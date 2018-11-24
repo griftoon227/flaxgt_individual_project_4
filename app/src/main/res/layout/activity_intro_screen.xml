@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IntroScreenActivity"
+    android:orientation="vertical"
+    android:background="@color/appBackgroundColor">
+
+    <!--Button for registration-->
+    <Button
+        android:id="@+id/registration_btn"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/registration_btn_text"
+        android:textSize="@dimen/intro_screen_btn_text_size"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="@dimen/intro_screen_btn_margin_side"
+        android:layout_marginRight="@dimen/intro_screen_btn_margin_side"
+        android:layout_marginTop="@dimen/intro_screen_btn_margin_top_bottom"/>
+
+    <!--Button for login-->
+    <Button
+        android:id="@+id/login_btn"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/login_btn_text"
+        android:textSize="@dimen/intro_screen_btn_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginLeft="@dimen/intro_screen_btn_margin_side"
+        android:layout_marginRight="@dimen/intro_screen_btn_margin_side"
+        android:layout_marginBottom="@dimen/intro_screen_btn_margin_top_bottom"/>
+
+</android.support.constraint.ConstraintLayout>

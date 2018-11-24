@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Gives user ability to scroll through the activity-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:orientation="vertical"
+    android:background="@color/appBackgroundColor">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--Login title text-->
+        <TextView
+            android:id="@+id/login_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/login_btn_text"
+            android:textSize="@dimen/title_text_size"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="@dimen/login_screen_margin"
+            android:layout_marginBottom="@dimen/login_screen_margin"/>
+
+        <!--User enters username here-->
+        <LinearLayout
+            android:id="@+id/username_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/login_title_text">
+
+            <TextView
+                android:id="@+id/username_field_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/username_text"
+                android:textSize="@dimen/register_text_size"/>
+
+            <EditText
+                android:id="@+id/username_field_entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/username_text"
+                android:inputType="text"
+                android:textSize="@dimen/register_text_size" />
+        </LinearLayout>
+
+        <!--User enters password here-->
+        <LinearLayout
+            android:id="@+id/password_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/username_field">
+
+            <TextView
+                android:id="@+id/password_field_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/password_text"
+                android:textSize="@dimen/register_text_size"/>
+
+            <EditText
+                android:id="@+id/password_field_entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/password_text"
+                android:inputType="textPassword"
+                android:textSize="@dimen/register_text_size" />
+        </LinearLayout>
+
+        <!--Button for login validation-->
+        <Button
+            android:id="@+id/login_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/login_btn_text"
+            android:textSize="@dimen/title_text_size"
+            app:layout_constraintTop_toBottomOf="@id/password_field"
+            android:layout_marginTop="@dimen/login_screen_margin"
+            android:layout_marginBottom="@dimen/login_screen_margin"/>
+
+        <!--Toggle parent/child account validation-->
+        <CheckBox
+            android:id="@+id/toggle_account_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/toggle_account_cb_text"
+            android:textSize="@dimen/register_text_size"
+            app:layout_constraintTop_toBottomOf="@id/login_btn"
+            android:layout_marginTop="@dimen/login_screen_margin"
+            android:layout_marginBottom="@dimen/login_screen_margin"/>
+
+        <!--Button to go back to main screen-->
+        <Button
+            android:id="@+id/go_back_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/go_back_btn_text"
+            android:textSize="@dimen/title_text_size"
+            app:layout_constraintTop_toBottomOf="@id/toggle_account_checkbox"
+            android:layout_marginTop="@dimen/login_screen_margin"/>
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

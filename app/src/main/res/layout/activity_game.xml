@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GameActivity"
+    android:background="@color/appBackgroundColor">
+
+    <!--Create the game bar-->
+    <LinearLayout
+        android:id="@+id/game_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!--Create the two buttons for starting the game and going to the previous screen-->
+        <LinearLayout
+            android:id="@+id/game_buttons_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/start_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/start_btn_text"
+                android:textSize="@dimen/game_screen_btn_text_size"/>
+
+            <Button
+                android:id="@+id/go_back_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/go_back_btn_text"
+                android:textSize="@dimen/game_screen_btn_text_size"/>
+        </LinearLayout>
+
+        <!--Drop spot #1-->
+        <Button
+            android:id="@+id/Btn1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/game_screen_drop_spot" />
+
+        <!--Drop spot #2-->
+        <Button
+            android:id="@+id/Btn2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/game_screen_drop_spot" />
+
+        <!--Drop spot #3-->
+        <Button
+            android:id="@+id/Btn3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/game_screen_drop_spot" />
+
+        <!--Drop spot #4-->
+        <Button
+            android:id="@+id/Btn4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/game_screen_drop_spot" />
+
+        <!--Drop spot #5-->
+        <Button
+            android:id="@+id/Btn5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/game_screen_drop_spot" />
+
+        <!--Drop spot #4-->
+        <Button
+            android:id="@+id/Btn6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/game_screen_drop_spot" />
+
+        <!--Up arrow to drag-->
+        <Button
+            android:id="@+id/upBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/ic_arrow_upward_black_24dp"
+            />
+
+        <!--Down arrow to drag-->
+        <Button
+            android:id="@+id/downBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/ic_arrow_downward_black_24dp"
+            />
+
+        <!--Left arrow to drag-->
+        <Button
+            android:id="@+id/leftBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/ic_arrow_left_black_24dp"
+            />
+
+        <!--Right arrow to drag-->
+        <Button
+            android:id="@+id/rightBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/ic_arrow_right_black_24dp"
+            />
+    </LinearLayout>
+
+    <!--Create the game map with the character placed on top-->
+    <FrameLayout
+        android:id="@+id/game_map"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <ImageView
+            android:id="@+id/game_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:contentDescription="@string/game_map_desc"/>
+
+        <ImageView
+            android:id="@+id/character"
+            android:src="@drawable/character"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/game_character_margin"
+            android:contentDescription="@string/game_character_desc"/>
+
+    </FrameLayout>
+</android.support.constraint.ConstraintLayout>
