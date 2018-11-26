@@ -12,6 +12,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+import com.example.grift.flaxgt_individual_project_4.db_firebase_model.MyFirebaseDatabase;
 import com.example.grift.flaxgt_individual_project_4.db_model.MyDatabase;
 
 public class RegistrationActivity extends AppCompatActivity {
@@ -100,6 +101,10 @@ public class RegistrationActivity extends AppCompatActivity {
 
             //applies the changes to the shared preferences file
             editor.apply();
+
+            //set the value of the number of attempts to 0
+            MyFirebaseDatabase myFirebaseDatabase = new MyFirebaseDatabase(child_username_etv.getText().toString());
+            myFirebaseDatabase.addOrChangeData(0);
 
             //goes back to the intro screen
             startActivity(new Intent(RegistrationActivity.this, IntroScreenActivity.class));

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">flaxgt_individual_project_3</string>
+    <string name="app_name">flaxgt_individual_project_4</string>
     <string name="author">By: Griffin Flaxman</string>
     <string name="registration_btn_text">Registration</string>
     <string name="login_btn_text">Login</string>
@@ -55,4 +55,6 @@
     <string name="level_1_brutal_button_desc">Level 1 Brutal Button</string>
     <string name="level_2_brutal_button_desc">Level 2 Brutal Button</string>
     <string name="level_3_brutal_button_desc">Level 3 Brutal Button</string>
+    <string name="leaderboard_title_text">Leaderboard</string>
+    <string name="leaderboard_desc_text">Displays the Top 5 children with the least amount of incorrect game patterns.</string>
 </resources>

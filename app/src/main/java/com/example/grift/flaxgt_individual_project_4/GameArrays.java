@@ -20,27 +20,27 @@ final class GameArrays {
     //matrix describing how to translate across the board (values 0-1)
     private final static double[][] whereToTranslate = new double[][]{
         //essentially, the part of the screen where I want to translate to
-        {.5, 1, 1},
-        {1, 1, 0},
-        {1, 1, 0},
-        {1, 1, 0, 0},
-        {.4, .5, .0, 1},
-        {.5, .5, 1, 1},
-        {.3, .5, 1, 1, 0},
-        {1, .5, 0, 1, 1},
-        {1, .5, 0, 1, 1},
-        {.3, .3, .5, 1, 1, 0},
-        {1, 1, 0, .5, .75, .75},
-        {.5, 1, 1, .5, 0, 0}
+        {.5, .95, .98},
+        {.95, .98, 0},
+        {.98, .95, 0},
+        {.98, .95, 0, 0},
+        {.4, .5, .0, .98},
+        {.4, .5, .95, .98},
+        {.35, .48, .95, .98, 0},
+        {.95, .5, 0, .98, .95},
+        {.98, .5, 0, .95, .98},
+        {.3, .35, .48, .95, .98, 0},
+        {.95, .98, 0, .25, .5, .75},
+        {.5, .98, .95, .5, 0, 0}
     };
 
     //returns the number of game map moves determined by the amount of moves there are to reach the end
-    public static int getNumberOfGameMapMoves(int pathPos){
+    static int getNumberOfGameMapMoves(int pathPos){
         return winningGamePaths[pathPos].length;
     }
 
     //returns the winning game path as long as the level type is not DEFAULT
-    public static int[] getWinningGamePath(int pathPos){
+    static int[] getWinningGamePath(int pathPos){
         if(pathPos != winningGamePaths.length){
             return winningGamePaths[pathPos];
         }
@@ -48,7 +48,7 @@ final class GameArrays {
     }
 
     //returns the where to translate on the game map as long as the level type is not DEFAULT
-    public static double[] getWhereToTranslate(int pathPos){
+    static double[] getWhereToTranslate(int pathPos){
         if(pathPos != whereToTranslate.length)
         {
             return whereToTranslate[pathPos];

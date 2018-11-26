@@ -16,7 +16,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.grift.flaxgt_individual_project_4.db_firebase_model.MyFirebaseDatabase;
+
 import java.util.ArrayList;
+import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -24,8 +27,6 @@ import butterknife.OnClick;
 
 import static com.example.grift.flaxgt_individual_project_4.GameArrays.*;
 import static com.example.grift.flaxgt_individual_project_4.LevelType.*;
-
-import com.example.grift.flaxgt_individual_project_4.LevelType;
 
 public class GameActivity extends AppCompatActivity {
     //bind the needed views
@@ -74,32 +75,20 @@ public class GameActivity extends AppCompatActivity {
             childUsername = extrasBundle.getString("childUsername");
         }
 
-        //set the game map depending on the level type
+        //set the game map depending on the level type and add coins
         if(levelType != null) {
-            if (levelType.equals(easy_1))
-                gameMap.setImageResource(R.drawable.map_easy_1);
-            else if (levelType.equals(easy_2))
-                gameMap.setImageResource(R.drawable.map_easy_2);
-            else if (levelType.equals(easy_3))
-                gameMap.setImageResource(R.drawable.map_easy_3);
-            else if (levelType.equals(medium_1))
-                gameMap.setImageResource(R.drawable.map_medium_1);
-            else if (levelType.equals(medium_2))
-                gameMap.setImageResource(R.drawable.map_medium_2);
-            else if (levelType.equals(medium_3))
-                gameMap.setImageResource(R.drawable.map_medium_3);
-            else if (levelType.equals(hard_1))
-                gameMap.setImageResource(R.drawable.map_hard_1);
-            else if (levelType.equals(hard_2))
-                gameMap.setImageResource(R.drawable.map_hard_2);
-            else if (levelType.equals(hard_3))
-                gameMap.setImageResource(R.drawable.map_hard_3);
-            else if (levelType.equals(brutal_1))
-                gameMap.setImageResource(R.drawable.map_brutal_1);
-            else if (levelType.equals(brutal_2))
-                gameMap.setImageResource(R.drawable.map_brutal_2);
-            else if (levelType.equals(brutal_3))
-                gameMap.setImageResource(R.drawable.map_brutal_3);
+            if (levelType.equals(easy_1)) gameMap.setImageResource(R.drawable.map_easy_1);
+            else if (levelType.equals(easy_2)) gameMap.setImageResource(R.drawable.map_easy_2);
+            else if (levelType.equals(easy_3)) gameMap.setImageResource(R.drawable.map_easy_3);
+            else if (levelType.equals(medium_1)) gameMap.setImageResource(R.drawable.map_medium_1);
+            else if (levelType.equals(medium_2)) gameMap.setImageResource(R.drawable.map_medium_2);
+            else if (levelType.equals(medium_3)) gameMap.setImageResource(R.drawable.map_medium_3);
+            else if (levelType.equals(hard_1)) gameMap.setImageResource(R.drawable.map_hard_1);
+            else if (levelType.equals(hard_2)) gameMap.setImageResource(R.drawable.map_hard_2);
+            else if (levelType.equals(hard_3)) gameMap.setImageResource(R.drawable.map_hard_3);
+            else if (levelType.equals(brutal_1)) gameMap.setImageResource(R.drawable.map_brutal_1);
+            else if (levelType.equals(brutal_2)) gameMap.setImageResource(R.drawable.map_brutal_2);
+            else if (levelType.equals(brutal_3)) gameMap.setImageResource(R.drawable.map_brutal_3);
         }
 
         //determine the level type and have the appropriate # of boxes to accommodate
@@ -141,58 +130,49 @@ public class GameActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.start_button)
-    protected void startGame(View view){
+    protected void startGame(View view) {
         //flag for if the level is correctly completed
         boolean isCompleted = false;
-        //gets the level id
-        int levelId = levelType.ordinal();
 
         //instantiate translate animation class
         Translate translate = new Translate();
 
         //check if the user properly completed the level depending on its difficulty
-        if(levelType.toString().contains("easy"))
-        {
-            if ((btn1.getBackground().getConstantState() == getDrawable(winningGamePath[0]).getConstantState()) &&
-                    (btn2.getBackground().getConstantState() == getDrawable(winningGamePath[1]).getConstantState()) &&
-                    (btn3.getBackground().getConstantState() == getDrawable(winningGamePath[2]).getConstantState())){
+        if (levelType.toString().contains("easy")) {
+            if ((btn1.getBackground().getConstantState() == Objects.requireNonNull(getDrawable(winningGamePath[0])).getConstantState()) &&
+                    (btn2.getBackground().getConstantState() == Objects.requireNonNull(getDrawable(winningGamePath[1])).getConstantState()) &&
+                    (btn3.getBackground().getConstantState() == Objects.requireNonNull(getDrawable(winningGamePath[2])).getConstantState())) {
                 isCompleted = true;
             }
-        }
-        else if(levelType.toString().contains("medium"))
-        {
-            if ((btn1.getBackground().getConstantState() == getDrawable(winningGamePath[0]).getConstantState()) &&
-                    (btn2.getBackground().getConstantState() == getDrawable(winningGamePath[1]).getConstantState()) &&
-                    (btn3.getBackground().getConstantState() == getDrawable(winningGamePath[2]).getConstantState()) &&
-                    (btn4.getBackground().getConstantState() == getDrawable(winningGamePath[3]).getConstantState())){
+        } else if (levelType.toString().contains("medium")) {
+            if ((btn1.getBackground().getConstantState() == Objects.requireNonNull(getDrawable(winningGamePath[0])).getConstantState()) &&
+                    (btn2.getBackground().getConstantState() == Objects.requireNonNull(getDrawable(winningGamePath[1])).getConstantState()) &&
+                    (btn3.getBackground().getConstantState() == Objects.requireNonNull(getDrawable(winningGamePath[2])).getConstantState()) &&
+                    (btn4.getBackground().getConstantState() == Objects.requireNonNull(getDrawable(winningGamePath[3])).getConstantState())) {
                 isCompleted = true;
             }
-        }
-        else if(levelType.toString().contains("hard"))
-        {
-            if ((btn1.getBackground().getConstantState() == getDrawable(winningGamePath[0]).getConstantState()) &&
-                    (btn2.getBackground().getConstantState() == getDrawable(winningGamePath[1]).getConstantState()) &&
-                    (btn3.getBackground().getConstantState() == getDrawable(winningGamePath[2]).getConstantState()) &&
-                    (btn4.getBackground().getConstantState() == getDrawable(winningGamePath[3]).getConstantState()) &&
-                    (btn5.getBackground().getConstantState() == (getDrawable(winningGamePath[4]).getConstantState()))){
+        } else if (levelType.toString().contains("hard")) {
+            if ((btn1.getBackground().getConstantState() == Objects.requireNonNull(getDrawable(winningGamePath[0])).getConstantState()) &&
+                    (btn2.getBackground().getConstantState() == Objects.requireNonNull(getDrawable(winningGamePath[1])).getConstantState()) &&
+                    (btn3.getBackground().getConstantState() == Objects.requireNonNull(getDrawable(winningGamePath[2])).getConstantState()) &&
+                    (btn4.getBackground().getConstantState() == Objects.requireNonNull(getDrawable(winningGamePath[3])).getConstantState()) &&
+                    (btn5.getBackground().getConstantState() == (Objects.requireNonNull(getDrawable(winningGamePath[4])).getConstantState()))) {
                 isCompleted = true;
             }
-        }
-        else
-        {
-            if ((btn1.getBackground().getConstantState() == getDrawable(winningGamePath[0]).getConstantState()) &&
-                    (btn2.getBackground().getConstantState() == getDrawable(winningGamePath[1]).getConstantState()) &&
-                    (btn3.getBackground().getConstantState() == getDrawable(winningGamePath[2]).getConstantState()) &&
-                    (btn4.getBackground().getConstantState() == getDrawable(winningGamePath[3]).getConstantState()) &&
-                    (btn5.getBackground().getConstantState() == getDrawable(winningGamePath[4]).getConstantState()) &&
-                    (btn6.getBackground().getConstantState() == getDrawable(winningGamePath[5]).getConstantState())){
+        } else {
+            if ((btn1.getBackground().getConstantState() == Objects.requireNonNull(getDrawable(winningGamePath[0])).getConstantState()) &&
+                    (btn2.getBackground().getConstantState() == Objects.requireNonNull(getDrawable(winningGamePath[1])).getConstantState()) &&
+                    (btn3.getBackground().getConstantState() == Objects.requireNonNull(getDrawable(winningGamePath[2])).getConstantState()) &&
+                    (btn4.getBackground().getConstantState() == Objects.requireNonNull(getDrawable(winningGamePath[3])).getConstantState()) &&
+                    (btn5.getBackground().getConstantState() == Objects.requireNonNull(getDrawable(winningGamePath[4])).getConstantState()) &&
+                    (btn6.getBackground().getConstantState() == Objects.requireNonNull(getDrawable(winningGamePath[5])).getConstantState())) {
                 isCompleted = true;
             }
         }
 
         //show the translation animation for the character if the level is correctly completed
         //toast the success and then complete the animation once it is configured
-        if(isCompleted) {
+        if (isCompleted) {
             Toast.makeText(getApplicationContext(), getString(R.string.success_text), Toast.LENGTH_SHORT).show();
             for (int i = 0; i < getNumberOfGameMapMoves(levelType.ordinal()); i++) {
                 switch (winningGamePath[i]) {
@@ -209,7 +189,7 @@ public class GameActivity extends AppCompatActivity {
             translate.beginAnimation();
 
             //update the child's log file to level complete
-            SharedPreferences sharedPreferences = getSharedPreferences(childUsername+"_log_file", MODE_PRIVATE);
+            SharedPreferences sharedPreferences = getSharedPreferences(childUsername + "_log_file", MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPreferences.edit();
 
             editor.putBoolean(levelType.toString(), true);
@@ -217,8 +197,12 @@ public class GameActivity extends AppCompatActivity {
             editor.apply();
         }
         //if not complete, tell the user their pattern was incorrect
-        else
+        else {
             Toast.makeText(getApplicationContext(), getString(R.string.failure_text), Toast.LENGTH_SHORT).show();
+            //logs incorrect attempts in FireBase for eventual display in the leader board
+            MyFirebaseDatabase myFirebaseDatabase = new MyFirebaseDatabase(childUsername);
+            myFirebaseDatabase.addOrChangeData(myFirebaseDatabase.getCurrentNumberOfAttempts()+1);
+        }
     }
 
     @OnClick(R.id.go_back_button)

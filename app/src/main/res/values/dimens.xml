@@ -14,4 +14,5 @@
     <dimen name="levels_screen_text_size">20sp</dimen>
     <dimen name="game_screen_btn_text_size">18sp</dimen>
     <dimen name="child_stats_chart_info_text_size">20sp</dimen>
+    <dimen name="child_stats_leaderboard_desc_text_size">11sp</dimen>
 </resources>

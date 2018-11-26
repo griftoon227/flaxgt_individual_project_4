@@ -1,7 +1,7 @@
 package com.example.grift.flaxgt_individual_project_4;
 
 //an enum representing the game levels, with a default value to avoid a null object reference
-public enum LevelType {
+enum LevelType {
     easy_1,
     easy_2,
     easy_3,

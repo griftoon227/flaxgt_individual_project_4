@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import static com.example.grift.flaxgt_individual_project_4.db_model.UserAccountContract.UserAccountEntry.*;
 import static com.example.grift.flaxgt_individual_project_4.db_model.UserAccountContract.TABLE_NAME;
@@ -29,6 +30,7 @@ public class MyDatabase {
         values.put(COL_CHILD_USERNAME, addValues[6]);
         values.put(COL_CHILD_PASSWORD, addValues[7]);
         long result = db.insert(TABLE_NAME, null, values);
+        Log.d("RESULT", Long.toString(result));
     }
 
     //validate the parent account's existence based on username and password entered
